@@ -26,7 +26,7 @@
   <a style="float: left" href="{% url 'taxi:driver-update' pk=driver.id %}" class="btn btn-secondary link-to-page">
       Update license
   </a>
-  <a style="float: left" href="{% url 'taxi:driver-update' pk=driver.id %}" class="btn btn-danger link-to-page">
+  <a style="float: left" href="{% url 'taxi:driver-delete' pk=driver.id %}" class="btn btn-danger link-to-page">
       Delete
   </a>
 {% endblock %}

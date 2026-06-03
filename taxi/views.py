@@ -1,5 +1,3 @@
-from multiprocessing import context
-
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
@@ -122,6 +120,7 @@ class DriverDetailView(LoginRequiredMixin, generic.DetailView):
 class DriverCreateView(LoginRequiredMixin, generic.CreateView):
     model = Driver
     form_class = DriverCreationForm
+    success_url = "taxi/driver-list"
 
 
 class DriverDeleteView(LoginRequiredMixin, generic.DeleteView):
