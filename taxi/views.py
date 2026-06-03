@@ -74,7 +74,7 @@ class CarDetailView(LoginRequiredMixin, generic.DetailView):
         car = self.object
         user = self.request.user
         if user.is_authenticated:
-            context['is_driver'] = car.drivers.filter(pk=user.pk).exists()
+            context["is_driver"] = car.drivers.filter(pk=user.pk).exists()
         return context
 
 
