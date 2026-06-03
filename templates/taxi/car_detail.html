@@ -16,6 +16,7 @@
     <h1>Drivers</h1>
 
     {% if user.is_authenticated %}
+      {% if is_driver %}
       <form method="post" action="{% url 'taxi:car-unassign' pk=car.id %}">
         {% csrf_token %}
         <button type="submit" class="btn btn-danger link-to-page">Delete me from this car</button>
@@ -25,6 +26,7 @@
         {% csrf_token %}
         <button type="submit" class="btn btn-success link-to-page">Assign me to this car</button>
       </form>
+      {% endif %}
     {% endif %}
   </div>
   <hr>
